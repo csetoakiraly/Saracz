@@ -153,6 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');
         hamburger.classList.toggle('toggle');
+        
+        // Háttér görgetésének megakadályozása, ha a menü nyitva van (iOS és más mobilok miatt .no-scroll osztállyal)
+        if (nav.classList.contains('active')) {
+            document.body.classList.add('no-scroll');
+            document.documentElement.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+            document.documentElement.classList.remove('no-scroll');
+        }
     });
 
     navLinksList.forEach(link => {
@@ -160,6 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 hamburger.classList.remove('toggle');
+                document.body.classList.remove('no-scroll');
+                document.documentElement.classList.remove('no-scroll');
             }
         });
     });
