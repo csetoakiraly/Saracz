@@ -157,10 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Háttér görgetésének megakadályozása, ha a menü nyitva van (iOS és más mobilok miatt .no-scroll osztállyal)
         if (nav.classList.contains('active')) {
             document.body.classList.add('no-scroll');
-            document.documentElement.classList.add('no-scroll');
         } else {
             document.body.classList.remove('no-scroll');
-            document.documentElement.classList.remove('no-scroll');
         }
     });
 
@@ -170,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 nav.classList.remove('active');
                 hamburger.classList.remove('toggle');
                 document.body.classList.remove('no-scroll');
-                document.documentElement.classList.remove('no-scroll');
             }
         });
     });

@@ -42,7 +42,6 @@ body.craftsman-edition {
 /* Általános osztály görgetés letiltására (mobilon is működik) */
 .no-scroll {
     overflow: hidden !important;
-    height: 100vh !important;
     touch-action: none;
 }
 
