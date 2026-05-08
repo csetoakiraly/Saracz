@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sárácz Kft. | Asztalos Műhely</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Roboto+Mono:wght@300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body class="craftsman-edition">
+
+    <!-- Egyedi Kurzor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Minimalista Navigáció -->
+    <header id="header">
+        <div class="header-inner container-wide">
+            <a href="#" class="logo">Sárácz<span>.</span></a>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#about" data-num="01">Rólunk</a></li>
+                    <li><a href="#services" data-num="02">Műhely</a></li>
+                    <li><a href="#portfolio" data-num="03">Munkáink</a></li>
+                    <li><a href="#contact" data-num="04">Kapcsolat</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: Aszimmetrikus elrendezés -->
+        <section id="hero" class="hero-craft">
+            <div class="hero-bg-text">SÁRÁCZ</div>
+            <div class="container hero-grid">
+                <div class="hero-text-block fade-in-up">
+                    <span class="category-tag">Asztalos Kézművesség</span>
+                    <h1>Nyers forma,<br><span class="indent">Precíz munka.</span></h1>
+                    <p>Egyedi bútorok, amikben a fa természetes lelke találkozik a mérnöki pontossággal.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-raw">Projekt Indítása</a>
+                        <div class="decorative-line-container">
+                            <div class="decorative-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-block">
+                    <div class="image-reveal">
+                        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80" alt="Workshop">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rólunk: Overlap és Vertikális szöveg -->
+        <section id="about" class="about-craft section-padding">
+            <div class="section-label">A MESTER</div>
+            <div class="container">
+                <div class="about-craft-grid">
+                    <div class="about-img-frame">
+                        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=80" alt="Craftsman" class="parallax-img" data-speed="0.05">
+                        <div class="offset-bg"></div>
+                    </div>
+                    <div class="about-text-frame fade-in-up">
+                        <h2 class="title-overlap">Több mint<br><span>Asztalosmunka</span></h2>
+                        <p>A Sárácz Kft. műhelyében nem csak deszkákat vágunk. Karaktert adunk az élettelen anyagnak. Minden fadarabnak megvan a maga története, mi pedig segítünk ezt elmesélni az Ön otthonában.</p>
+                        <ul class="craft-list">
+                            <li><span>01.</span> Válogatott nemes fák</li>
+                            <li><span>02.</span> Hagyományos csapolások</li>
+                            <li><span>03.</span> Modern technológia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Szolgáltatások: Industrial List -->
+        <section id="services" class="services-craft section-padding">
+            <div class="container">
+                <h2 class="mono-title">/ SZOLGÁLTATÁSAINK</h2>
+                <div class="services-stack">
+                    <div class="service-item fade-in-up">
+                        <span class="s-num">01</span>
+                        <div class="s-content">
+                            <h3>Konyha & Étkező</h3>
+                            <p>Tömörfa asztalok és konyhabútorok, amik köré gyűlik a család.</p>
+                        </div>
+                    </div>
+                    <div class="service-item fade-in-up">
+                        <span class="s-num">02</span>
+                        <div class="s-content">
+                            <h3>Gardrób & Tárolás</h3>
+                            <p>Maximális helykihasználás, rejtett funkciókkal.</p>
+                        </div>
+                    </div>
+                    <div class="service-item fade-in-up">
+                        <span class="s-num">03</span>
+                        <div class="s-content">
+                            <h3>Egyedi Nyílászárók</h3>
+                            <p>Ajtók, amik lezárnak, de meg is nyitják a teret.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Munkáink: Masonry-style Grid -->
+        <section id="portfolio" class="portfolio-craft section-padding">
+            <div class="container-wide">
+                <div class="portfolio-header">
+                    <h2 class="giant-title">GALÉRIA</h2>
+                    <p class="mono-desc">Válogatott munkáink az elmúlt évekből.</p>
+                </div>
+                <div class="masonry-grid">
+                    <div class="m-item h-tall" data-parallax="0.1">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Konyha">
+                        <div class="m-overlay"><span>Konyhabútor</span></div>
+                    </div>
+                    <div class="m-item h-small" data-parallax="-0.05">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80" alt="Szekrény">
+                        <div class="m-overlay"><span>Gardrób</span></div>
+                    </div>
+                    <div class="m-item h-med">
+                        <img src="kepek/sandsberg-asztal-fekete__1540633_pe1017814_s5.avif" alt="Asztal">
+                        <div class="m-overlay"><span>Ebédlőasztal</span></div>
+                    </div>
+                    <div class="m-item h-tall" data-parallax="0.08">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Nappali">
+                        <div class="m-overlay"><span>Nappali</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Folyamat: Minimalista -->
+        <section class="process-craft section-padding">
+            <div class="container">
+                <div class="process-grid">
+                    <div class="process-title-block">
+                        <h2 class="title-overlap">Hogy lesz a fából<br><span>Otthon?</span></h2>
+                    </div>
+                    <div class="steps-vertical">
+                        <div class="step-v">
+                            <h3>01 / Tervezés</h3>
+                            <p>Az elképzelés papírra vetése, anyagok kiválasztása.</p>
+                        </div>
+                        <div class="step-v">
+                            <h3>02 / Megmunkálás</h3>
+                            <p>Fűrészelés, gyalulás, csiszolás a műhelyben.</p>
+                        </div>
+                        <div class="step-v">
+                            <h3>03 / Beépítés</h3>
+                            <p>Amikor a helyére kerül a mestermű.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GYIK: Craftsman Accordion -->
+        <section class="faq-craft section-padding">
+            <div class="container">
+                <h2 class="mono-title">/ GYAKORI KÉRDÉSEK</h2>
+                <div class="faq-stack">
+                    <div class="faq-item-craft">
+                        <div class="faq-q">
+                            <h3>Mennyi idő alatt készül el egy konyhabútor?</h3>
+                            <span class="faq-plus">+</span>
+                        </div>
+                        <div class="faq-a">
+                            <p>A gyártási idő a bonyolultságtól függ. Átlagosan 4-6 hét, de a pontos határidőt a felméréskor fixáljuk.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item-craft">
+                        <div class="faq-q">
+                            <h3>Vállalnak munkát Budapesten kívül is?</h3>
+                            <span class="faq-plus">+</span>
+                        </div>
+                        <div class="faq-a">
+                            <p>Igen, Budapesten és Pest megye teljes területén dolgozunk. Egyedi projektek esetén távolabb is.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kapcsolat: Industrial Split -->
+        <section id="contact" class="contact-craft section-padding">
+            <div class="container">
+                <div class="contact-craft-grid">
+                    <div class="contact-header">
+                        <h2 class="giant-title">KAPCSOLAT</h2>
+                        <div class="c-info-mono">
+                            <p>SÁRÁCZ KFT.</p>
+                            <p>+36 30 123 4567</p>
+                            <p>INFO@SARACZKFT.HU</p>
+                            <p>1234 BUDAPEST, FA UTCA 1.</p>
+                        </div>
+                    </div>
+                    <div class="contact-form-raw">
+                        <form id="contact-form">
+                            <div class="raw-group">
+                                <input type="text" id="name" required placeholder="NEVE">
+                            </div>
+                            <div class="raw-group">
+                                <input type="email" id="email" required placeholder="EMAIL">
+                            </div>
+                            <div class="raw-group">
+                                <textarea id="message" rows="4" required placeholder="MIRE VAN SZÜKSÉGE?"></textarea>
+                            </div>
+                            <button type="submit" class="btn-industrial">ÜZENET KÜLDÉSE <span>&rarr;</span></button>
+                            <p id="form-status" class="form-status"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-wide footer-bottom">
+            <p class="mono-text">&copy; 2026 SÁRÁCZ KFT. / MINDEN JOG FENNTARTVA.</p>
+            <div class="footer-socials">
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Képnézegető Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

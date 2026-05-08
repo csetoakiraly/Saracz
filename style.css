@@ -1,0 +1,845 @@
+/* =========================================
+   Sárácz Kft. - Craftsman Edition
+   ========================================= */
+
+:root {
+    --primary-dark: #121212;
+    --primary-light: #F2F0ED; /* Nyers papír/fa árnyalat */
+    --accent-wood: #8C5A35;
+    --accent-wood-dark: #5C3A21;
+    --text-main: #2A2A2A;
+    --text-muted: #7A7A7A;
+    --border-color: #D1CDC7;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-mono: 'Roboto Mono', monospace;
+    --font-alt: 'Oswald', sans-serif;
+
+    --transition-craft: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Base & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body.craftsman-edition {
+    font-family: var(--font-mono);
+    background-color: var(--primary-light);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+    cursor: none; /* Egyedi kurzor miatt */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-wide {
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+/* Custom Cursor */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-wood);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(3);
+    background-color: var(--accent-wood);
+}
+
+/* Minimalist Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 100;
+    transition: var(--transition-craft);
+}
+
+header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(242, 240, 237, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--primary-dark);
+}
+
+.logo span {
+    color: var(--accent-wood);
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-wood);
+}
+
+.nav-links a::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.6rem;
+    color: var(--accent-wood);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-dark);
+}
+
+/* Hero Section - Asymmetrical Grid */
+.hero-craft {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 25vw;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: rgba(0,0,0,0.03);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.category-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--accent-wood);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-text-block h1 {
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+.hero-text-block h1 span.indent {
+    display: block;
+    margin-left: 100px;
+    font-style: italic;
+    color: var(--accent-wood);
+}
+
+.hero-text-block p {
+    max-width: 400px;
+    margin-bottom: 40px;
+    color: var(--text-muted);
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.decorative-line-container {
+    position: relative;
+    width: 15vw; /* Using viewport width so it stretches dynamically */
+    display: flex;
+    align-items: center;
+}
+
+.decorative-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-wood);
+    position: relative;
+    opacity: 0.5;
+}
+
+.decorative-line::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -2px;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-dark);
+    border-radius: 50%;
+}
+
+.hero-image-block {
+    position: relative;
+}
+
+.image-reveal {
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.image-reveal img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    filter: grayscale(0.2);
+}
+
+/* Buttons - Raw Style */
+.btn-raw {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    font-family: var(--font-alt);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transition-craft);
+}
+
+.btn-raw:hover {
+    background-color: var(--accent-wood);
+    transform: translateX(10px);
+}
+
+/* Section Label (Vertical Text) */
+.section-label {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 10px;
+    color: var(--border-color);
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+/* About Craftsman - Overlap Layout */
+.about-craft {
+    position: relative;
+}
+
+.about-craft-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-img-frame {
+    position: relative;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.about-img-frame img {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.offset-bg {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 50px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.title-overlap {
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+.title-overlap span {
+    color: var(--accent-wood);
+}
+
+.craft-list {
+    margin-top: 40px;
+}
+
+.craft-list li {
+    margin-bottom: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.craft-list li span {
+    color: var(--accent-wood);
+    margin-right: 15px;
+}
+
+/* Services Stack */
+.mono-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+}
+
+.services-stack {
+    border-top: 1px solid var(--border-color);
+}
+
+.service-item {
+    display: flex;
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition-craft);
+}
+
+.service-item:hover {
+    padding-left: 30px;
+    background-color: rgba(140, 90, 53, 0.05);
+}
+
+.s-num {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--accent-wood);
+    margin-right: 100px;
+}
+
+.service-item h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Portfolio Masonry */
+.giant-title {
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: -5px;
+    line-height: 0.8;
+}
+
+.mono-desc {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.m-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.h-tall { height: 450px; }
+.h-med { height: 350px; }
+.h-small { height: 250px; }
+
+.m-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-craft);
+}
+
+.m-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18,18,18,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-craft);
+}
+
+.m-overlay span {
+    color: var(--primary-light);
+    font-family: var(--font-alt);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.m-item:hover .m-overlay {
+    opacity: 1;
+}
+
+.m-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Process Section */
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.steps-vertical {
+    border-left: 1px solid var(--accent-wood);
+    padding-left: 50px;
+}
+
+.step-v {
+    margin-bottom: 60px;
+}
+
+.step-v h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Contact Craft */
+.contact-craft-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+}
+
+.c-info-mono {
+    margin-top: 50px;
+}
+
+.c-info-mono p {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.contact-form-raw .raw-group {
+    margin-bottom: 40px;
+}
+
+.contact-form-raw input, 
+.contact-form-raw textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 15px 0;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-raw input:focus, 
+.contact-form-raw textarea:focus {
+    outline: none;
+    border-color: var(--accent-wood);
+}
+
+.btn-industrial {
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    border: none;
+    padding: 20px 40px;
+    font-family: var(--font-alt);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: var(--transition-craft);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-industrial:hover {
+    background: var(--accent-wood);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mono-text {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.footer-socials a {
+    margin-left: 30px;
+    font-size: 0.8rem;
+}
+
+/* FAQ Craft */
+.faq-stack {
+    border-top: 1px solid var(--border-color);
+    max-width: 800px;
+}
+
+.faq-item-craft {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-q {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-q h3 {
+    font-size: 1.2rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.faq-plus {
+    font-size: 1.5rem;
+    color: var(--accent-wood);
+    transition: var(--transition-craft);
+}
+
+.faq-item-craft.active .faq-plus {
+    transform: rotate(45deg);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-a p {
+    padding-bottom: 30px;
+    color: var(--text-muted);
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18,18,18,0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s var(--transition-craft);
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: var(--primary-light);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* Form Status */
+.form-status {
+    margin-top: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: none;
+    text-align: center;
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s var(--transition-craft), transform 1s var(--transition-craft);
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .hero-craft {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 150px;
+        padding-bottom: 50px;
+        overflow: visible;
+    }
+    
+    .image-reveal img {
+        height: 50vh;
+    }
+
+    .giant-title { font-size: 5rem; }
+    .hero-text-block h1 { font-size: 3.5rem; }
+    .hero-grid, .about-craft-grid, .process-grid, .contact-craft-grid { 
+        grid-template-columns: 1fr; 
+        gap: 50px;
+    }
+    .hero-image-block { display: block; margin-top: 30px; }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .decorative-line-container {
+        width: 1px;
+        height: 60px;
+        margin-left: 20px; /* Align with button */
+    }
+    
+    .decorative-line {
+        width: 1px;
+        height: 100%;
+    }
+    
+    .decorative-line::after {
+        right: -2px;
+        top: auto;
+        bottom: -5px;
+    }
+
+    .masonry-grid { grid-template-columns: repeat(2, 1fr); }
+    .offset-bg { display: none; } /* Hide offset background on smaller screens as it can break layout */
+    .about-img-frame { padding: 0; }
+}
+
+@media screen and (max-width: 768px) {
+    body.craftsman-edition { cursor: auto; }
+    #custom-cursor { display: none; }
+    
+    .desktop-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s var(--transition-craft);
+        z-index: 90;
+    }
+    
+    .desktop-nav.active {
+        right: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .hamburger { 
+        display: flex; 
+        z-index: 100;
+        position: relative;
+    }
+    
+    .hamburger span {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.toggle span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+    
+    .hamburger.toggle span:nth-child(2) {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+
+    .about-craft-grid, .process-grid, .contact-craft-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-craft-grid { gap: 50px; }
+
+    .steps-vertical {
+        padding-left: 20px;
+    }
+
+    .title-overlap { font-size: 2.5rem; }
+    .giant-title { font-size: 3rem; }
+    .masonry-grid { grid-template-columns: 1fr; }
+    
+    .service-item {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+    .s-num {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Új mobil optimalizálások a szétcsúszás ellen */
+    .section-padding { padding: 60px 0; }
+    
+    .hero-text-block { text-align: center; }
+    .hero-text-block h1 { font-size: 2.5rem; }
+    .hero-text-block h1 span.indent { margin-left: 0; display: inline-block; }
+    .hero-text-block p { margin: 0 auto 30px; }
+    
+    .hero-actions {
+        align-items: center;
+    }
+    
+    .decorative-line-container { 
+        margin-left: 0; 
+        display: flex;
+    }
+    
+    .hero-bg-text { 
+        display: block; 
+        font-size: 25vw; 
+        top: 25%; 
+        transform: translateY(-50%);
+        opacity: 0.3;
+    }
+    
+    .about-text-frame { padding: 0 10px; }
+    .craft-list { margin-left: 20px; padding-left: 0; text-align: left; display: inline-block; }
+    .craft-list li { margin-left: 0; }
+    
+    .title-overlap { font-size: 2rem; }
+    .service-item h3 { font-size: 1.8rem; }
+    .step-v h3 { font-size: 1.5rem; }
+    .btn-industrial { font-size: 1rem; padding: 15px 20px; }
+    .section-label { display: none; }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-socials a {
+        margin: 0 15px;
+    }
+}
