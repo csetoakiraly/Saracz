@@ -697,8 +697,7 @@ header.scrolled {
     }
     
     .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 15px;
     }
 
@@ -785,7 +784,7 @@ header.scrolled {
     .section-padding { padding: 60px 0; }
     
     .hero-craft {
-        padding-top: 100px; /* Bring hero block higher up */
+        padding-top: 130px; /* Visszább toljuk kicsit lefelé a blokkot */
     }
 
     .hero-text-block { text-align: center; }
@@ -800,10 +799,10 @@ header.scrolled {
     .hero-bg-text { 
         display: block; 
         font-size: 25vw; 
-        top: auto; 
-        bottom: 5%; /* Push text lower */
-        transform: translateY(0);
-        color: rgba(0, 0, 0, 0.08); /* Darker for mobile to be visible */
+        top: 25%; /* Eltoljuk lejjebb a translateY(-50%) miatt, hogy továbbra is a tetején legyen nagyjából */
+        bottom: auto;
+        transform: translateY(-50%); /* Visszaállítjuk a default asztali értéket, így nem fog ugrani JS animációnál */
+        color: rgba(0, 0, 0, 0.08); 
         opacity: 1;
     }
     
