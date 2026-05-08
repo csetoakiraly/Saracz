@@ -784,7 +784,7 @@ header.scrolled {
     .section-padding { padding: 60px 0; }
     
     .hero-craft {
-        padding-top: 130px; /* Visszább toljuk kicsit lefelé a blokkot */
+        padding-top: 180px; /* Visszább toljuk kicsit lefelé a blokkot */
     }
 
     .hero-text-block { text-align: center; }
@@ -799,7 +799,7 @@ header.scrolled {
     .hero-bg-text { 
         display: block; 
         font-size: 25vw; 
-        top: 25%; /* Eltoljuk lejjebb a translateY(-50%) miatt, hogy továbbra is a tetején legyen nagyjából */
+        top: 15%; /* Feljebb húzzuk, hogy ne takarja ki a szöveg */
         bottom: auto;
         transform: translateY(-50%); /* Visszaállítjuk a default asztali értéket, így nem fog ugrani JS animációnál */
         color: rgba(0, 0, 0, 0.08); 
