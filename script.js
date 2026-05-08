@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');
         hamburger.classList.toggle('toggle');
+        document.body.classList.toggle('menu-active');
         
         // Háttér görgetésének megakadályozása, ha a menü nyitva van (iOS és más mobilok miatt .no-scroll osztállyal)
         if (nav.classList.contains('active')) {
@@ -167,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 hamburger.classList.remove('toggle');
+                document.body.classList.remove('menu-active');
                 document.body.classList.remove('no-scroll');
             }
         });
