@@ -186,12 +186,19 @@ header.scrolled {
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 50px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 1;
     position: relative;
+    width: 100%;
+}
+
+.hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category-tag {
@@ -211,7 +218,6 @@ header.scrolled {
 
 .hero-text-block h1 span.indent {
     display: block;
-    margin-left: 100px;
     font-style: italic;
     color: var(--accent-wood);
 }
@@ -224,30 +230,25 @@ header.scrolled {
 
 .hero-actions {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 30px;
+    margin-bottom: 40px;
 }
 
-.decorative-line-container {
-    position: relative;
-    width: 15vw; /* Using viewport width so it stretches dynamically */
-    display: flex;
-    align-items: center;
-}
-
-.decorative-line {
-    width: 100%;
-    height: 1px;
+.hero-line-bottom {
+    width: 1px;
+    height: 100px;
     background-color: var(--accent-wood);
     position: relative;
     opacity: 0.5;
 }
 
-.decorative-line::after {
+.hero-line-bottom::after {
     content: '';
     position: absolute;
-    right: -5px;
-    top: -2px;
+    bottom: -5px;
+    left: -2px;
     width: 5px;
     height: 5px;
     background-color: var(--primary-dark);
@@ -694,29 +695,11 @@ header.scrolled {
         grid-template-columns: 1fr; 
         gap: 50px;
     }
-    .hero-image-block { display: block; margin-top: 30px; }
     
     .hero-actions {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-    
-    .decorative-line-container {
-        width: 1px;
-        height: 60px;
-        margin-left: 20px; /* Align with button */
-    }
-    
-    .decorative-line {
-        width: 1px;
-        height: 100%;
-    }
-    
-    .decorative-line::after {
-        right: -2px;
-        top: auto;
-        bottom: -5px;
     }
 
     .masonry-grid { grid-template-columns: repeat(2, 1fr); }
@@ -801,6 +784,10 @@ header.scrolled {
     /* Új mobil optimalizálások a szétcsúszás ellen */
     .section-padding { padding: 60px 0; }
     
+    .hero-craft {
+        padding-top: 100px; /* Bring hero block higher up */
+    }
+
     .hero-text-block { text-align: center; }
     .hero-text-block h1 { font-size: 2.5rem; }
     .hero-text-block h1 span.indent { margin-left: 0; display: inline-block; }
@@ -810,17 +797,14 @@ header.scrolled {
         align-items: center;
     }
     
-    .decorative-line-container { 
-        margin-left: 0; 
-        display: flex;
-    }
-    
     .hero-bg-text { 
         display: block; 
         font-size: 25vw; 
-        top: 25%; 
-        transform: translateY(-50%);
-        opacity: 0.3;
+        top: auto; 
+        bottom: 5%; /* Push text lower */
+        transform: translateY(0);
+        color: rgba(0, 0, 0, 0.08); /* Darker for mobile to be visible */
+        opacity: 1;
     }
     
     .about-text-frame { padding: 0 10px; }
