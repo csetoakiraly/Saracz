@@ -97,7 +97,7 @@ header {
     left: 0;
     width: 100%;
     padding: 30px 0;
-    z-index: 100;
+    z-index: 10000; /* Magasabb, mint a menü háttér (9999) */
     transition: var(--transition-craft);
 }
 
@@ -238,13 +238,14 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .hero-line-bottom {
     width: 1px;
-    height: 100px;
+    height: 60px;
     background-color: var(--accent-wood);
     position: relative;
     opacity: 0.5;
@@ -765,7 +766,7 @@ main {
 
     .hamburger { 
         display: flex; 
-        z-index: 100;
+        z-index: 10001; /* Magasabb, mint a desktop-nav (9999) */
         position: relative;
     }
 
@@ -778,11 +779,15 @@ main {
         background-color: var(--primary-light);
     }
     .hamburger.toggle span:nth-child(1) {
-        transform: translateY(5px) rotate(45deg);
+        transform: translateY(10px) rotate(45deg);
     }
     
     .hamburger.toggle span:nth-child(2) {
-        transform: translateY(-5px) rotate(-45deg);
+        opacity: 0;
+    }
+
+    .hamburger.toggle span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
     }
 
     .about-craft-grid, .process-grid, .contact-craft-grid {
@@ -827,11 +832,12 @@ main {
     .hero-bg-text { 
         display: block; 
         font-size: 25vw; 
-        top: 20%; /* Picit feljebb húztuk */
+        top: 20%; 
         bottom: auto;
-        transform: translateY(-50%); /* Visszaállítjuk a default asztali értéket, így nem fog ugrani JS animációnál */
+        transform: translateY(-50%);
         color: rgba(0, 0, 0, 0.08); 
         opacity: 1;
+        z-index: -1; /* Ensure it stays behind the blurred main content if needed, though main blur should handle it */
     }
     
     .about-text-frame { padding: 0 10px; }

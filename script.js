@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.desktop-nav');
     const navLinksList = document.querySelectorAll('.nav-links a');
+    const logo = document.querySelector('.logo');
 
     hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');
@@ -163,14 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const closeMenu = () => {
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            hamburger.classList.remove('toggle');
+            document.body.classList.remove('menu-active');
+            document.body.classList.remove('no-scroll');
+        }
+    };
+
     navLinksList.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('toggle');
-                document.body.classList.remove('menu-active');
-                document.body.classList.remove('no-scroll');
-            }
-        });
+        link.addEventListener('click', closeMenu);
     });
+
+    logo.addEventListener('click', closeMenu);
 });
